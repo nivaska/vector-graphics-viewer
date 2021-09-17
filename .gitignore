@@ -1,0 +1,5 @@
+.vscode
+.suo
+bin
+obj
+packages

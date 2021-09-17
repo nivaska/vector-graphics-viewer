@@ -11,18 +11,17 @@ namespace VectorGraphicsViewer.ViewModels
     /// <summary>
     /// View Model bound to the Main Window
     /// </summary>
-    public class MainViewModel: ViewModelBase
+    public class ShellViewModel: ViewModelBase
     {
-
         private readonly IInputReader _inputReader;
         private RelayCommand _selectInputCommand;
         private string _selectedFile;
         private string _statusMessage;
         private ObservableCollection<IPrimitive> _primitives;
 
-        public MainViewModel()
+        public ShellViewModel(IInputReader inputReader)
         {
-            _inputReader = new JsonInputReader();
+            _inputReader = inputReader;
             _selectInputCommand = new RelayCommand(param => ExecuteSelectInputCommand(), null);
             _primitives = new ObservableCollection<IPrimitive>();
             this.StatusMessage = "Select an input file";
