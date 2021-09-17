@@ -5,6 +5,6 @@ In order to be able to easily switch between different types of Input readers, I
 
 ## RUN Instructions
 
-The application can be launched by starting the "VectorGraphicsViewer.exe" in the [src](src) folder or by opening the source code in Visual Studio and building it.<br>
+The application can be launched by starting the "VectorGraphicsViewer.exe" in the [app](app) folder or by opening the source code in Visual Studio and building it.<br>
 A [sample_input](sample_input.json) file is attached.
 
