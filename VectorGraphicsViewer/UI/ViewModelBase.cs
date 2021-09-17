@@ -3,7 +3,10 @@ using System.Runtime.CompilerServices;
 
 namespace VectorGraphicsViewer.UI
 {
-    public class ViewModelBase: INotifyPropertyChanged
+    /// <summary>
+    /// A class with basic implementation required by all view models
+    /// </summary>
+    public abstract class ViewModelBase: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

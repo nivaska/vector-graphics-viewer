@@ -20,24 +20,23 @@ namespace VectorGraphicsViewer
             itemsControl.ItemContainerGenerator.StatusChanged += ItemContainerGenerator_StatusChanged;
         }
 
+        /// <summary>
+        /// Event handler for when the Primitive Collection is inserted into the ItemsControl
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void ItemContainerGenerator_StatusChanged(object sender, System.EventArgs e)
         {
+            // adapt the canvas elements to the window when the Primitives are bound to the Canavs for the first time
             if (itemsControl.ItemContainerGenerator.Status == System.Windows.Controls.Primitives.GeneratorStatus.ContainersGenerated)
             {
                 await Task.Run(() => {
-                    Thread.Sleep(100);
+                    // wait until the elements are renderred
+                    Thread.Sleep(10);
                     this.Dispatcher.Invoke(() => AdaptCanvasElementsToWindow());
                 });
             }
         }
-
-        //private void Primitive_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        //{
-        //    var senderElement = sender as Shape;
-        //    var primitiveData = senderElement.DataContext as IPrimitive;
-
-
-        //}
 
         /// <summary>
         /// Event handler for the Resize event of the Main Window

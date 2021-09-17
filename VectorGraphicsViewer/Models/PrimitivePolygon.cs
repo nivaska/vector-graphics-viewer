@@ -5,6 +5,10 @@ using VectorGraphicsViewer.Interfaces;
 
 namespace VectorGraphicsViewer.Models
 {
+    /// <summary>
+    /// Model for Polygonal Primitives
+    /// Supports the type "Traingle" now, can be extended to any other Polygon
+    /// </summary>
     public class PrimitivePolygon : IPrimitivePolygon
     {
         private readonly PrimitiveType _primitiveType;

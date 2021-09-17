@@ -6,7 +6,8 @@ namespace VectorGraphicsViewer
     public static class UIHelper
     {
         /// <summary>
-        /// (Copied from StackOverflow) Finds a parent of a given item on the visual tree. 
+        /// (Copied from StackOverflow)
+        /// Finds a parent of a given item on the visual tree. 
         /// </summary>
         /// <typeparam name="T">The type of the queried item.</typeparam>
         /// <param name="child">A direct or indirect child of the queried item.</param>

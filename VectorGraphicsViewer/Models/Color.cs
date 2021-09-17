@@ -44,7 +44,8 @@ namespace VectorGraphicsViewer.Models
         public short R
         {
             get { return _r; }
-            set {
+            set
+            {
                 if (this.IsValidValue(value)) _r = value;
                 else throw new Exception("Invalid value for Color");
             }
@@ -80,17 +81,18 @@ namespace VectorGraphicsViewer.Models
             }
         }
 
+        private bool IsValidValue(int value)
+        {
+            return value >= 0 && value <= 255;
+
+        }
+
         public string HexCode
         {
             get
             {
                 return this.ToString();
             }
-        }
-
-        private bool IsValidValue(int value)
-        {
-            return value >= 0 && value <= 255;
         }
 
         public override string ToString()

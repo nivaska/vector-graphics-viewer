@@ -21,11 +21,11 @@ namespace VectorGraphicsViewer.Services
             if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
                 throw new Exception("Invalid input file path.");
 
-
             var inputPrimitives = this.DeserializeInput(filePath);
             if (inputPrimitives == null)
                 throw new Exception("Unable to read the input file.");
 
+            // Maps the deserialized "PrimitiveInputModel" types to "IPrimitive" types
             return inputPrimitives.Select(i => i.MapToIPrimitive()).ToList();
         }
 
@@ -50,7 +50,7 @@ namespace VectorGraphicsViewer.Services
 
 
     /// <summary>
-    /// Model created to help in the deserialisation of the input JSON
+    /// Model created to help with the deserialisation of input JSON
     /// </summary>
     public class PrimitiveInputModel
     {

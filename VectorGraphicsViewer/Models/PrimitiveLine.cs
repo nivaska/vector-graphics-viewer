@@ -2,6 +2,9 @@
 
 namespace VectorGraphicsViewer.Models
 {
+    /// <summary>
+    /// Model for Line Primitive
+    /// </summary>
     public class PrimitiveLine : IPrimitiveLine
     {
         private Color _color;

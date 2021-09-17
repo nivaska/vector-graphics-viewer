@@ -28,6 +28,9 @@ namespace VectorGraphicsViewer.ViewModels
             this.StatusMessage = "Select an input file";
         }
 
+        /// <summary>
+        /// Command bound to select button in the UI to help select the input file
+        /// </summary>
         public RelayCommand SelectInputCommand
         {
             get
@@ -36,19 +39,27 @@ namespace VectorGraphicsViewer.ViewModels
             }
         }
 
+        /// <summary>
+        /// Name of the selected input file
+        /// </summary>
         public string SelectedFile
         {
             get { return _selectedFile; }
             set { _selectedFile = value; OnPropertyChanged(); }
         }
 
-
+        /// <summary>
+        /// Application status displayed at the bottom of the Window
+        /// </summary>
         public string StatusMessage
         {
             get { return _statusMessage; }
             set { _statusMessage = value; OnPropertyChanged(); }
         }
 
+        /// <summary>
+        /// Collection of Primitive shapes bound to the Canvas
+        /// </summary>
         public ObservableCollection<IPrimitive> Primitives
         {
             get { return _primitives; }
@@ -66,6 +77,9 @@ namespace VectorGraphicsViewer.ViewModels
             }
         }
 
+        /// <summary>
+        /// Fetches the primitives from the input file and binds to UI
+        /// </summary>
         private void LoadInputToView()
         {
             this.StatusMessage = "Parsing input file";

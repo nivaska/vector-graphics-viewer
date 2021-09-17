@@ -2,6 +2,9 @@
 
 namespace VectorGraphicsViewer.Models
 {
+    /// <summary>
+    /// Model for Primitive Circle
+    /// </summary>
     public class PrimitiveCircle : IPrimitiveCircle
     {
         private bool? _isFilled;
