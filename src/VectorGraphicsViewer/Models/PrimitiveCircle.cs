@@ -5,7 +5,7 @@ namespace VectorGraphicsViewer.Models
     /// <summary>
     /// Model for Primitive Circle
     /// </summary>
-    public class PrimitiveCircle : IPrimitiveCircle
+    public class PrimitiveCircle: IPrimitive
     {
         private bool? _isFilled;
         private Color _color;
@@ -20,7 +20,6 @@ namespace VectorGraphicsViewer.Models
             this._color = color;
         }
 
-        public PrimitiveType Type => PrimitiveType.Circle;
         public Color Color { get => this._color; set => this._color = value; }
         public bool? IsFilled { get => this._isFilled; set => this._isFilled = value; }
         public Coordinate Center { get => this._center; set => this._center = value; }
@@ -34,10 +33,5 @@ namespace VectorGraphicsViewer.Models
         public float YPos => this._center.Y - this._radius;
         
         #endregion
-
-        public override string ToString()
-        {
-            return this.Type.ToString();
-        }
     }
 }

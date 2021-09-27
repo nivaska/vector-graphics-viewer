@@ -7,16 +7,15 @@ namespace VectorGraphicsViewer.Models
 {
     /// <summary>
     /// Model for Polygonal Primitives
-    /// Supports the type "Traingle" now, can be extended to any other Polygon
     /// </summary>
-    public class PrimitivePolygon : IPrimitivePolygon
+    public class PrimitivePolygon: IPrimitive
     {
         private readonly PrimitiveType _primitiveType;
         private bool? _isFilled;
         private Color _color;
-        private List<Coordinate> _coordinates;
+        private IEnumerable<Coordinate> _coordinates;
 
-        public PrimitivePolygon(PrimitiveType primitiveType, List<Coordinate> coordinates, bool? isFilled, Color color)
+        public PrimitivePolygon(PrimitiveType primitiveType, IEnumerable<Coordinate> coordinates, bool? isFilled, Color color)
         {
             this._primitiveType = primitiveType;
             this._isFilled = isFilled;
@@ -27,7 +26,8 @@ namespace VectorGraphicsViewer.Models
         public PrimitiveType Type => this._primitiveType;
         public Color Color { get => this._color; set => this._color = value; }
         public bool? IsFilled { get => this._isFilled; set => this._isFilled = value; }
-        public List<Coordinate> Coordinates
+
+        public IEnumerable<Coordinate> Coordinates
         {
             get => this._coordinates;
             set
@@ -44,9 +44,9 @@ namespace VectorGraphicsViewer.Models
             get => String.Join(" ", this._coordinates.Select(c => c.ToString()));
         }
 
-        private bool IsCoordinatesValid(List<Coordinate> value)
+        private bool IsCoordinatesValid(IEnumerable<Coordinate> value)
         {
-            if (value?.Count > 2 && value?.Count == (int)this._primitiveType)
+            if (value?.Count() > 2 && value?.Count() == (int)this._primitiveType)
                 return true;
             
             return false;

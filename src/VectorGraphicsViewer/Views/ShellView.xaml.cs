@@ -82,8 +82,8 @@ namespace VectorGraphicsViewer.Views
             if (minXScalingFactor == 0 || minYScalingFactor > xScalingFactor)
                 minXScalingFactor = xScalingFactor;
 
-            if (minYScalingFactor == 0 || minYScalingFactor > xScalingFactor)
-                minYScalingFactor = xScalingFactor;
+            if (minYScalingFactor == 0 || minYScalingFactor > yScalingFactor)
+                minYScalingFactor = yScalingFactor;
         }
 
         var scalingFactor = minXScalingFactor > minYScalingFactor ? minYScalingFactor : minXScalingFactor;

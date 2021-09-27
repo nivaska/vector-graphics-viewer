@@ -77,7 +77,6 @@
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Interfaces\IInputReader.cs" />
-    <Compile Include="Interfaces\IPrimitiveLine.cs" />
     <Compile Include="Models\PrimitiveLine.cs" />
     <Compile Include="UI\ViewModelBase.cs" />
     <Compile Include="UI\RelayCommand.cs" />
@@ -91,8 +90,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Interfaces\IPrimitiveCircle.cs" />
-    <Compile Include="Interfaces\IPrimitivePolygon.cs" />
     <Page Include="Views\ShellView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

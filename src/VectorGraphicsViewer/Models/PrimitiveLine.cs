@@ -5,7 +5,7 @@ namespace VectorGraphicsViewer.Models
     /// <summary>
     /// Model for Line Primitive
     /// </summary>
-    public class PrimitiveLine : IPrimitiveLine
+    public class PrimitiveLine: IPrimitive
     {
         private Color _color;
         private Coordinate _start;
@@ -20,8 +20,6 @@ namespace VectorGraphicsViewer.Models
 
         public Coordinate Start { get => this._start; set => this._start = value; }
         public Coordinate End { get => this._end; set => this._end = value; }
-
-        public PrimitiveType Type => PrimitiveType.Line;
         public Color Color { get => this._color; set => this._color = value; }
         public bool? IsFilled { get => null; set {} }
     }
